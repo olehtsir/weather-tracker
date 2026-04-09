@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Météo — Poissy · Paris · Saint-Germain</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero__copy">
+          <p class="eyebrow">Météo locale</p>
+          <h1>Météo à portée de main</h1>
+          <p class="hero__description">
+            Consultez la météo détaillée pour Poissy, Paris et
+            Saint-Germain-en-Laye : température, vent, précipitations, qualité
+            de l'air et prévisions.
+          </p>
+
+          <nav class="city-tabs" id="city-tabs" aria-label="Choisir une ville">
+            <button class="city-tab active" data-city="poissy" type="button">Poissy</button>
+            <button class="city-tab" data-city="paris" type="button">Paris</button>
+            <button class="city-tab" data-city="sgl" type="button">St-Germain</button>
+          </nav>
+
+          <p id="status" class="status" aria-live="polite">Chargement…</p>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="card card--current" aria-labelledby="current-heading">
+          <div class="card__header">
+            <div>
+              <p class="card__eyebrow">Actuellement à</p>
+              <h2 id="current-heading">—</h2>
+            </div>
+          </div>
+          <div id="current-weather" class="current-weather empty-state">
+            Sélectionnez une ville pour voir la météo actuelle.
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="details-heading">
+          <div class="card__header">
+            <div>
+              <p class="card__eyebrow">Détails</p>
+              <h2 id="details-heading">Conditions actuelles</h2>
+            </div>
+          </div>
+          <div id="weather-details" class="details-grid empty-state">
+            Température ressentie, vent, humidité et plus encore.
+          </div>
+        </section>
+
+        <section class="card card--wide" aria-labelledby="air-heading">
+          <div class="card__header">
+            <div>
+              <p class="card__eyebrow">Environnement</p>
+              <h2 id="air-heading">Qualité de l'air</h2>
+            </div>
+          </div>
+          <div id="air-quality" class="empty-state">
+            Indice de qualité de l'air et polluants.
+          </div>
+        </section>
+
+        <section class="card card--wide" aria-labelledby="hourly-heading">
+          <div class="card__header">
+            <div>
+              <p class="card__eyebrow">Heure par heure</p>
+              <h2 id="hourly-heading">12 prochaines heures</h2>
+            </div>
+          </div>
+          <div id="hourly-forecast" class="hourly-strip empty-state">
+            Prévisions horaires détaillées.
+          </div>
+        </section>
+
+        <section class="card card--wide" aria-labelledby="daily-heading">
+          <div class="card__header">
+            <div>
+              <p class="card__eyebrow">Sur la semaine</p>
+              <h2 id="daily-heading">7 prochains jours</h2>
+            </div>
+          </div>
+          <div id="daily-forecast" class="daily-list empty-state">
+            Prévisions quotidiennes avec températures min et max.
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer-note">
+        Données météo fournies par
+        <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a>.
+      </footer>
+    </div>
+  </body>
+</html>
